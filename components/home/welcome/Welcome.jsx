@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Image, FlatList } from 'react-native'
 import { useRouter } from 'expo-router'
 
 import styles from './welcome.style'
 import { COLORS, icons, SIZES } from '../../../constants'
 
+const conferences = ["Eastern Conference", "Western Conference"];
+
 const Welcome = () => {
+  const router = useRouter();
+  const [activeConference, setActiveConference] = useState("Eastern Conference")
   return (
     <View>
       <View style={styles.container}>
@@ -32,7 +36,18 @@ const Welcome = () => {
       </View>
 
       <View style={styles.tabsContainer}>
-        <FlatList />
+        <FlatList
+          data={conferences}
+          renderItem={({ item }) => (
+            <TouchableOpacity s
+              style={styles.tab(activeConference, item)}
+              onPress={() => {
+                setActiveConference(item);
+                router.push(`/search/${item}`);
+              }}>
+                <Text>{ item }</Text>
+            </TouchableOpacity>
+          )} />
       </View>
     </View>
   )
