@@ -31,7 +31,8 @@ const Welcome = () => {
           <Image 
             source={icons.search}
             resizeMode='contain'
-            style={styles.searchBtnImage}/>
+            style={styles.searchBtnImage}
+            />
         </TouchableOpacity>
       </View>
 
@@ -44,7 +45,8 @@ const Welcome = () => {
               onPress={() => {
                 setActiveConference(item);
                 router.push(`/search/${item}`);
-              }}>
+              }}
+              >
                 <Text style={styles.tabText(activeConference, item)}>{ item }</Text>
             </TouchableOpacity>
           )} 
