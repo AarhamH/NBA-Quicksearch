@@ -20,6 +20,7 @@ const Welcome = () => {
             value=''
             onChange={() => {}}
             placeholder="Search for NBA Player"
+            placeholderTextColor={COLORS.gray2}
             />
         </View>
         <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
