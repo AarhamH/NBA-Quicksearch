@@ -5,11 +5,11 @@ import { useRouter } from 'expo-router'
 import styles from './welcome.style'
 import { COLORS, icons, SIZES } from '../../../constants'
 
-const conferences = ["Eastern Conference", "Western Conference"];
+const conferences = ["Atlantic", "Central", "Southeast", "Northwest", "Pacific", "Southwest"];
 
 const Welcome = () => {
   const router = useRouter();
-  const [activeConference, setActiveConference] = useState("Eastern Conference")
+  const [activeConference, setActiveConference] = useState("Atlantic")
   return (
     <View>
       <View style={styles.container}>
@@ -45,9 +45,13 @@ const Welcome = () => {
                 setActiveConference(item);
                 router.push(`/search/${item}`);
               }}>
-                <Text>{ item }</Text>
+                <Text style={styles.tabText(activeConference, item)}>{ item }</Text>
             </TouchableOpacity>
-          )} />
+          )} 
+          keyExtractor={ item => item}  
+          contentContainerStyle={{ columnGap: SIZES.small }}
+          horizontal
+          />
       </View>
     </View>
   )
