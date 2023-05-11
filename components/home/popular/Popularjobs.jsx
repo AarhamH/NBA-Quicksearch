@@ -11,7 +11,7 @@ const Popularjobs = () => {
   const router = useRouter();
   const { data, isLoading, error } = useFetch();
 
-  console.log(data);
+  //console.log(data);
 
   return (
     <View style={styles.container}>
