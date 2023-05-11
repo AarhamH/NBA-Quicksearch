@@ -1,22 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import {RAPID_API_KEY} from '@env '
-
-const apiKey = RAPID_API_KEY;
-const useFetch = (endpoint, query) => {
+const useFetch = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const options = {
-    method: 'GET',
-    url: `https://api-nba-v1.p.rapidapi.com/${endpoint}`,
-    headers: {
-        'X-RapidAPI-Key': apiKey,
-        'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
-    },
-    params: {...query},
-    };
+        method: 'GET',
+        url: 'https://api-nba-v1.p.rapidapi.com/players',
+        params: {search: 'james'},
+        headers: {
+          'X-RapidAPI-Key': 'c88ea079e8mshb2b985d98730896p1c722bjsn4505e7f9c114',
+          'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
+        }
+      }
 
     const fetchData = async () => {
         setIsLoading(true);

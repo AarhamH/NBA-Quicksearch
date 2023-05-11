@@ -5,11 +5,11 @@ import styles from './popularjobs.style'
 import { useRouter } from 'expo-router'
 import { COLORS, SIZES } from '../../../constants'
 import PopularJobCard from '../../common/cards/popular/PopularJobCard'
+import useFetch from '../../../customhooks/useFetch'
 
 const Popularjobs = () => {
   const router = useRouter();
-  const isLoading = false;
-  const error = false;
+  const { data, isLoading, error} = useFetch();
 
   return (
     <View style={styles.container}>
@@ -29,7 +29,7 @@ const Popularjobs = () => {
                 item = { item }
               />
             )}
-            
+
             keyExtractor={item => item?.job_id}
             contentContainerStyle = {{columnGap: SIZES.medium}}
             horizontal
