@@ -7,13 +7,13 @@ const useFetch = (endpoint, query) => {
   const [error, setError] = useState(null);
 
   const options = {
-    method: "GET",
-    url: `https://jsearch.p.rapidapi.com/${endpoint}`,
+    method: 'GET',
+    url: 'https://api-nba-v1.p.rapidapi.com/teams',
+    params: {search: 'atl'},
     headers: {
-      "X-RapidAPI-Key": 'c88ea079e8mshb2b985d98730896p1c722bjsn4505e7f9c114',
-      "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
-    },
-    params: { ...query },
+      'X-RapidAPI-Key': 'c88ea079e8mshb2b985d98730896p1c722bjsn4505e7f9c114',
+      'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
+    }
   };
 
   const fetchData = async () => {
@@ -22,7 +22,7 @@ const useFetch = (endpoint, query) => {
     try {
       const response = await axios.request(options);
 
-      setData(response.data.data);
+      setData(response.data.response);
       setIsLoading(false);
     } catch (error) {
       setError(error);
