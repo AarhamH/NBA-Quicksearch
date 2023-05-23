@@ -20,11 +20,11 @@ const PlayerDetails = () => {
             case "About":   
                 return <Specifics 
                          title='About' 
-                         playerBirthday = {data[0].dateOfBirth}
-                         playerAge = {data[0].age}
-                         playerHeight = {data[0].height}
-                         playerWeight = {data[0].weight}
-                         playerTeam = {data[0].team}/>
+                         playerBirthday = {data.dateOfBirth}
+                         playerAge = {data.age}
+                         playerHeight = {data.height}
+                         playerWeight = {data.weight}
+                         playerTeam = {data.team}/>
             case "Statistics":
                 break;
             default:
@@ -35,8 +35,9 @@ const PlayerDetails = () => {
     const onRefresh = () => {}
 
 
-
-    const {data,isLoading,error} = useFetch('players/team',{name: 'Lakers'});
+    var id = params.id;
+    const {data,isLoading,error} = useFetch(`players/${id}`,{});
+    console.log(params.id)
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
             <Stack.Screen options={{headerStyle: {backgroundColor: COLORS.lightWhite}, headerShadowVisible: false, headerBackVisible: false,
@@ -47,27 +48,31 @@ const PlayerDetails = () => {
             }}/>
 
             <>
-                <ScrollView showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}>
-                    {isLoading ? (<ActivityIndicator size='large' color={COLORS.primary}/>) : error ? (<Text>There Was An Error</Text>) : data.length === 0 ? (<Text>No Data</Text>) : 
-                    (<View style={{padding: SIZES.medium, paddingBottom: 100}}>
-                        <PlayerGeneral
-                            playerHeadShot = {data[0].headShotUrl}
-                            playerFirstName={data[0].firstName}
-                            playerLastName={data[0].lastName}
-                            playerPosition = {data[0].position}
-                            playerJersey = {data[0].jerseyNumber}
+            <ScrollView showsVerticalScrollIndicator={false}
+                refreshControl={
+                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+            >
+            {isLoading ? (
+                <ActivityIndicator size='large' color={COLORS.primary} />) : error ? (<Text>Something went wrong</Text>) : data.length === 0 ? (<Text>No data available</Text>) : (
+                <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
+                    <PlayerGeneral
+                        playerHeadShot={data.headShotUrl}
+                        playerFirstName={data.firstName}
+                        playerLastName={data.lastName}
+                        playerPosition={data.position}
+                        playerJersey={data.jerseyNumber}
+                    />
 
-                        /> 
+                    <Tabs
+                        tabs={tabs}
+                        activeTab={activeTab}
+                        setActiveTab={setActiveTab}
+                    />
 
-                        <Tabs
-                            tabs={tabs}
-                            activeTab = {activeTab}
-                            setActiveTab = {setActiveTab}
-                        />
-
-                        {displayTabContent()}
-                    </View>)} 
-                </ScrollView>
+                    {displayTabContent()}
+                </View>
+            )}
+            </ScrollView>
             </>
         </SafeAreaView>
     )
