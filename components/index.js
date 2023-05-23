@@ -5,7 +5,7 @@ import Welcome from "./home/welcome/Welcome";
 import Nearbyjobs from "./home/nearby/Nearbyjobs";
 
 // job details screen
-import Company from "./jobdetails/company/Company";
+import PlayerGeneral from "./jobdetails/playergeneral/PlayerGeneral";
 import { default as Tabs } from "./jobdetails/tabs/Tabs";
 import { default as About } from "./jobdetails/about/About";
 import { default as Footer } from "./jobdetails/footer/Footer";
@@ -18,7 +18,7 @@ export {
   ScreenHeaderBtn,
   Welcome,
   Nearbyjobs,
-  Company,
+  PlayerGeneral,
   Tabs,
   About,
   Footer,
