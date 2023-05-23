@@ -6,9 +6,9 @@ import Nearbyjobs from "./home/nearby/Nearbyjobs";
 
 // job details screen
 import Company from "./jobdetails/company/Company";
-import { default as JobTabs } from "./jobdetails/tabs/Tabs";
-import { default as JobAbout } from "./jobdetails/about/About";
-import { default as JobFooter } from "./jobdetails/footer/Footer";
+import { default as Tabs } from "./jobdetails/tabs/Tabs";
+import { default as About } from "./jobdetails/about/About";
+import { default as Footer } from "./jobdetails/footer/Footer";
 import Specifics from "./jobdetails/specifics/Specifics";
 
 // common
@@ -19,9 +19,9 @@ export {
   Welcome,
   Nearbyjobs,
   Company,
-  JobTabs,
-  JobAbout,
-  JobFooter,
+  Tabs,
+  About,
+  Footer,
   Specifics,
   NearbyJobCard
 };
