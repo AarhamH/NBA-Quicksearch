@@ -6,29 +6,37 @@ import { PlayerGeneral, About, Footer, Specifics, Tabs, ScreenHeaderBtn } from '
 import {COLORS, icons, SIZES} from '../../constants'
 import useFetch from '../../hook/useFetch'
 
+const tabs = ["About", "Statistics"];
+
+
 const PlayerDetails = () => {
 
     const params = useSearchParams();
     const router = useRouter();
-    const tabs = ["About", "Statistics"]
 
     const [refreshing, setRefreshing] = useState(false);
     const [activeTab, setActiveTab] = useState(tabs[0]);
     const displayTabContent = () => {
         switch (activeTab)
         {
-            case "About":   
-                return <Specifics 
+            case "About":  
+                return (<About 
                          title='About' 
                          playerBirthday = {data.dateOfBirth}
                          playerAge = {data.age}
                          playerHeight = {data.height}
                          playerWeight = {data.weight}
-                         playerTeam = {data.team}/>
+                         playerTeam = {data.team}/>);
             case "Statistics":
-                break;
+                return (<Specifics 
+                title='About' 
+                playerBirthday = {data.dateOfBirth}
+                playerAge = {data.age}
+                playerHeight = {data.height}
+                playerWeight = {data.weight}
+                playerTeam = {data.team}/>);
             default:
-                break;
+                return null;
         }
     }
 
