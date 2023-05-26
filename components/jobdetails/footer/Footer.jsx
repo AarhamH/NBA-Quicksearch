@@ -3,10 +3,10 @@ import { View, Text } from 'react-native'
 
 import styles from './footer.style'
 
-const Footer = () => {
+const Footer = ({dateLastUpdated}) => {
   return (
-    <View>
-      <Text>Footer</Text>
+    <View style={styles.container}>
+      <Text> Last Updated: {dateLastUpdated}</Text>
     </View>
   )
 }

@@ -6,7 +6,7 @@ import { PlayerGeneral, About, Footer, Specifics, Tabs, ScreenHeaderBtn } from '
 import {COLORS, icons, SIZES} from '../../constants'
 import useFetch from '../../hook/useFetch'
 
-const tabs = ["About", "Statistics"];
+const tabs = ["About", "Career Statistics"];
 
 
 const PlayerDetails = () => {
@@ -21,20 +21,23 @@ const PlayerDetails = () => {
         {
             case "About":  
                 return (<About 
-                         title='About' 
+                         title=' About: ' 
                          playerBirthday = {data.dateOfBirth}
                          playerAge = {data.age}
                          playerHeight = {data.height}
                          playerWeight = {data.weight}
                          playerTeam = {data.team}/>);
-            case "Statistics":
+            case "Career Statistics":
                 return (<Specifics 
-                title='About' 
-                playerBirthday = {data.dateOfBirth}
-                playerAge = {data.age}
-                playerHeight = {data.height}
-                playerWeight = {data.weight}
-                playerTeam = {data.team}/>);
+                title=' Career Statistics: ' 
+                playerPPG = {data.careerPoints}
+                playerREB = {data.careerRebounds}
+                playerAST = {data.carrerAssists}
+                playerBLK = {data.careerBlocks}
+                playerTOV = {data.careerTurnovers}
+                player3PT = {data.careerPercentageThree}
+                playerFT = {data.careerPercentageFreethrow}
+                playerFG = {data.careerPercentageFieldGoal}/>);
             default:
                 return null;
         }
@@ -81,6 +84,9 @@ const PlayerDetails = () => {
                 </View>
             )}
             </ScrollView>
+
+            <Footer
+                dateLastUpdated={data.dateLastUpdated}/>
             </>
         </SafeAreaView>
     )

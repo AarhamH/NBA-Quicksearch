@@ -7,9 +7,10 @@ import { COLORS, icons, SIZES } from '../../../constants'
 
 const conferences = ["Atlantic", "Central", "Southeast", "Northwest", "Pacific", "Southwest"];
 
-const Welcome = () => {
+const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   const router = useRouter();
   const [activeConference, setActiveConference] = useState("Atlantic")
+
   return (
     <View>
       <View style={styles.container}>
@@ -21,13 +22,13 @@ const Welcome = () => {
         <View style={styles.searchWrapper}>
           <TextInput
             style={styles.searchInput}
-            value=''
-            onChange={() => {}}
+            value={searchTerm}
+            onChangeText={(text) => setSearchTerm(text)}
             placeholder="Search for NBA Player"
             placeholderTextColor={COLORS.gray2}
             />
         </View>
-        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+        <TouchableOpacity style={styles.searchBtn} onPress={handleClick}>
           <Image 
             source={icons.search}
             resizeMode='contain'

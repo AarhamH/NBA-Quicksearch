@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 
 import styles from './specifics.style'
 
-const Specifics = ({title,playerBirthday,playerAge,playerHeight,playerWeight,playerTeam}) => {
+const Specifics = ({title,playerPPG,playerREB,playerAST,playerBLK,playerTOV,player3PT,playerFT,playerFG}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -12,31 +12,49 @@ const Specifics = ({title,playerBirthday,playerAge,playerHeight,playerWeight,pla
         {/* THIS IS A POINT COMPONENT*/}
         <View style={styles.pointWrapper}>
           <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>Age: {playerAge}</Text>
+          <Text style={styles.pointText}>PPG: {playerPPG}</Text>
         </View>
 
         {/* THIS IS A POINT COMPONENT*/}
         <View style={styles.pointWrapper}>
           <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>Birth Date: {playerBirthday}</Text>
+          <Text style={styles.pointText}>REB: {playerREB}</Text>
         </View>
 
         {/* THIS IS A POINT COMPONENT*/}
         <View style={styles.pointWrapper}>
           <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>Height: {playerHeight}</Text>
+          <Text style={styles.pointText}>AST: {playerAST}</Text>
         </View>
 
         {/* THIS IS A POINT COMPONENT*/}
         <View style={styles.pointWrapper}>
           <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>Weight: {playerWeight}</Text>
+          <Text style={styles.pointText}>BLK: {playerBLK}</Text>
         </View>
 
         {/* THIS IS A POINT COMPONENT*/}
         <View style={styles.pointWrapper}>
           <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>Team: {playerTeam}</Text>
+          <Text style={styles.pointText}>TOV: {playerTOV}</Text>
+        </View>
+
+        {/* THIS IS A POINT COMPONENT*/}
+        <View style={styles.pointWrapper}>
+          <View style={styles.pointDot}/>
+          <Text style={styles.pointText}>3PT%: {player3PT}</Text>
+        </View>
+
+        {/* THIS IS A POINT COMPONENT*/}
+        <View style={styles.pointWrapper}>
+          <View style={styles.pointDot}/>
+          <Text style={styles.pointText}>FT%: {playerFT}</Text>
+        </View>
+
+        {/* THIS IS A POINT COMPONENT*/}
+        <View style={styles.pointWrapper}>
+          <View style={styles.pointDot}/>
+          <Text style={styles.pointText}>FG%: {playerFG}</Text>
         </View>
       </View>
     </View>
