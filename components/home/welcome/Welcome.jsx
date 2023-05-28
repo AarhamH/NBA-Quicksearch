@@ -4,8 +4,9 @@ import { useRouter } from 'expo-router'
 
 import styles from './welcome.style'
 import { COLORS, icons, SIZES } from '../../../constants'
+import { teams } from '../../../teams/teams'
 
-const conferences = ["Atlantic", "Central", "Southeast", "Northwest", "Pacific", "Southwest"];
+const conferences = ["Lakers", "Central", "Southeast", "Northwest", "Pacific", "Southwest"];
 
 const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   const router = useRouter();
@@ -24,7 +25,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
             style={styles.searchInput}
             value={searchTerm}
             onChangeText={(text) => setSearchTerm(text)}
-            placeholder="Search for NBA Player"
+            placeholder="Search Player Through Last Name"
             placeholderTextColor={COLORS.gray2}
             />
         </View>
@@ -39,13 +40,13 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
 
       <View style={styles.tabsContainer}>
         <FlatList
-          data={conferences}
+          data={teams}
           renderItem={({ item }) => (
             <TouchableOpacity s
               style={styles.tab(activeConference, item)}
               onPress={() => {
                 setActiveConference(item);
-                router.push(`/search/${item}`);
+                router.push(`/team-search/${item}`);
               }}
               >
                 <Text style={styles.tabText(activeConference, item)}>{ item }</Text>

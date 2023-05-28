@@ -44,11 +44,8 @@ const PlayerDetails = () => {
     }
 
     const onRefresh = () => {}
+    const {data,isLoading,error} = useFetch(`players/${params.id}`,{});
 
-
-    var id = params.id;
-    const {data,isLoading,error} = useFetch(`players/${id}`,{});
-    console.log(params.id)
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
             <Stack.Screen options={{headerStyle: {backgroundColor: COLORS.lightWhite}, headerShadowVisible: false, headerBackVisible: false,

@@ -10,16 +10,11 @@ const Home = () => {
     const router = useRouter();
     const [searchTerm,setSearchTerm] = useState("");
     return(
-        <SafeAreaView style={{ flex:1, backgroundColor: COLORS.lightWhite}}>
+        <SafeAreaView style={{ flex:5, backgroundColor: COLORS.lightWhite}}>
             <Stack.Screen options={{
-                headerStyle: { backgroundColor: COLORS.lightWhite },
-                headerShadowVisible: false,
-                headerLeft: () => (
-                    <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%"/>
-                ),
-                headerRight: () => (
-                    <ScreenHeaderBtn iconUrl={images.profile} dimension="100%"/>
-                ),
+                headerStyle: { backgroundColor: COLORS.primary },
+                headerShadowVisible: true,
+                headerLargeStyle: true,
                 headerTitle:""
             }}/>
 
