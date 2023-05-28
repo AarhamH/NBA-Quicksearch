@@ -6,13 +6,13 @@ import {
   ActivityIndicator,
 } from "react-native";
 
-import styles from "./nearbyjobs.style";
+import styles from "./playersummary.style";
 import { COLORS } from "../../../constants";
-import NearbyJobCard from "../../common/cards/nearby/NearbyJobCard";
+import PlayerSummaryCard from "../../common/cards/summarycard/PlayerSummaryCard";
 import useFetch from "../../../hook/useFetch";
 
 
-const Nearbyjobs = () => {
+const PlayerSummary = () => {
   const router = useRouter();
   const {data,isLoading,error} = useFetch('players/team',{name: 'Lakers'});
 
@@ -36,11 +36,11 @@ const Nearbyjobs = () => {
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
-          data?.map((item) => (<NearbyJobCard item = {item} key={`nearby-job-${item?.id}`} handleNavigate={() => router.push(`/player-details/${item.id}`)}/>))
+          data?.map((item) => (<PlayerSummaryCard item = {item} key={`nearby-job-${item?.id}`} handleNavigate={() => router.push(`/player-details/${item.id}`)}/>))
         )}
       </View>
     </View>
   );
 };
 
-export default Nearbyjobs;
+export default PlayerSummary;

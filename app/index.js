@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Stack, useRouter } from 'expo-router';
 
 import { COLORS, icons, images, SIZ, SIZES } from '../constants';
-import { Nearbyjobs, ScreenHeaderBtn, Welcome} from '../components'
+import { PlayerSummary, ScreenHeaderBtn, Welcome} from '../components'
 
 const Home = () => {
 
@@ -40,7 +40,7 @@ const Home = () => {
                             }
                         }}
                     />
-                    <Nearbyjobs/>
+                    <PlayerSummary/>
                 </View>
             </ScrollView>
         </SafeAreaView>

@@ -2,26 +2,26 @@ import ScreenHeaderBtn from "./common/header/ScreenHeaderBtn";
 
 // home screen
 import Welcome from "./home/welcome/Welcome";
-import Nearbyjobs from "./home/nearby/Nearbyjobs";
+import PlayerSummary from "./home/summary/PlayerSummary";
 
 // job details screen
-import PlayerGeneral from "./jobdetails/playergeneral/PlayerGeneral";
-import { default as Tabs } from "./jobdetails/tabs/Tabs";
-import { default as About } from "./jobdetails/about/About";
-import { default as Footer } from "./jobdetails/footer/Footer";
-import Specifics from "./jobdetails/specifics/Specifics";
+import PlayerGeneral from "./playerprofile/playergeneral/PlayerGeneral";
+import { default as Tabs } from "./playerprofile/tabs/Tabs";
+import { default as About } from "./playerprofile/about/About";
+import { default as Footer } from "./playerprofile/footer/Footer";
+import Specifics from "./playerprofile/specifics/Specifics";
 
 // common
-import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
+import PlayerSummaryCard from "./common/cards/summarycard/PlayerSummaryCard";
 
 export {
   ScreenHeaderBtn,
   Welcome,
-  Nearbyjobs,
+  PlayerSummary,
   PlayerGeneral,
   Tabs,
   About,
   Footer,
   Specifics,
-  NearbyJobCard
+  PlayerSummaryCard
 };
