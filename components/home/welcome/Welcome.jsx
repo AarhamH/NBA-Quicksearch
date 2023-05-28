@@ -6,8 +6,6 @@ import styles from './welcome.style'
 import { COLORS, icons, SIZES } from '../../../constants'
 import { teams } from '../../../teams/teams'
 
-const conferences = ["Lakers", "Central", "Southeast", "Northwest", "Pacific", "Southwest"];
-
 const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   const router = useRouter();
   const [activeConference, setActiveConference] = useState("Atlantic")
@@ -42,13 +40,10 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
         <FlatList
           data={teams}
           renderItem={({ item }) => (
-            <TouchableOpacity s
+            <TouchableOpacity 
               style={styles.tab(activeConference, item)}
-              onPress={() => {
-                setActiveConference(item);
-                router.push(`/team-search/${item}`);
-              }}
-              >
+              onPress={() => {setActiveConference(item);
+                              router.push(`/team-search/${item}`);}}>
                 <Text style={styles.tabText(activeConference, item)}>{ item }</Text>
             </TouchableOpacity>
           )} 
