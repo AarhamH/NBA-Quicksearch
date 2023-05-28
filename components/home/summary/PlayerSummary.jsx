@@ -9,12 +9,15 @@ import {
 import styles from "./playersummary.style";
 import { COLORS } from "../../../constants";
 import PlayerSummaryCard from "../../common/cards/summarycard/PlayerSummaryCard";
+import { teams } from '../../../teams/teams'
 import useFetch from "../../../hook/useFetch";
 
 
 const PlayerSummary = () => {
+  var randomnumber = Math.floor(Math.random() * (teams.length));  
   const router = useRouter();
-  const {data,isLoading,error} = useFetch('players/team',{name: 'Lakers'});
+  console.log(randomnumber);
+  const {data,isLoading,error} = useFetch('players/team',{name: teams[randomnumber]});
 
 
   const handleNavigate = (item) => {
