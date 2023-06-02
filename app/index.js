@@ -31,7 +31,7 @@ const Home = () => {
                         handleClick = {() => {
                             if(searchTerm)
                             {
-                                router.push(`/search/${searchTerm}`)
+                                router.push({pathname: `/search/[id]`, params:{id: searchTerm, type:'firstname'}});
                             }
                         }}
                     />

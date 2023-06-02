@@ -20,10 +20,6 @@ const PlayerSummary = () => {
   const {data,isLoading,error} = useFetch('players/team',{name: teams[randomnumber]});
 
 
-  const handleNavigate = (item) => {
-
-  };
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>

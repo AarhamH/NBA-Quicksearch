@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native'
 import { Stack, useRouter, useSearchParams } from 'expo-router'
 import { Text, SafeAreaView } from 'react-native'
+import { checkNullName } from '../../utils'
 import axios from 'axios'
 
 import { ScreenHeaderBtn, PlayerSummaryCard } from '../../components'
@@ -20,16 +21,8 @@ const PlayerSearch = () => {
     const [searchError, setSearchError] = useState(null);
     const [page, setPage] = useState(1);
 
-    const {data} = useFetch('players/lastname',{lastname: params.id});
-
-    const handlePagination = (direction) => {
-        if (direction === 'left' && page > 1) {
-            setPage(page - 1)
-        } else if (direction === 'right') {
-            setPage(page + 1)
-        }
-    }
-
+    const {data} = useFetch(`players/${params.type}`,{firstname: params.id, name: params.id});
+    const {data1} = useFetch('players/lastname',{lastname: params.id});
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -37,19 +30,12 @@ const PlayerSearch = () => {
                 options={{
                     headerStyle: { backgroundColor: COLORS.lightWhite },
                     headerShadowVisible: false,
-                    headerLeft: () => (
-                        <ScreenHeaderBtn
-                            iconUrl={icons.left}
-                            dimension='60%'
-                            handlePress={() => router.back()}
-                        />
-                    ),
                     headerTitle: "",
                 }}
             />
 
             <FlatList
-                data={data}
+                data={(data[0] === undefined) ? data1: data}
                 renderItem={({ item }) => (
                     <PlayerSummaryCard
                         item={item}
@@ -61,8 +47,8 @@ const PlayerSearch = () => {
                 ListHeaderComponent={() => (
                     <>
                         <View style={styles.container}>
-                            <Text style={styles.searchTitle}>{params.id}</Text>
-                            <Text style={styles.noOfSearchedJobs}>Job Opportunities</Text>
+                            <Text style={styles.searchTitle}>Showing Results For "{params.id}"</Text>
+                            <Text style={styles.noOfSearchedJobs}>Individual Players</Text>
                         </View>
                         <View style={styles.loaderContainer}>
                             {searchLoader ? (
@@ -72,33 +58,6 @@ const PlayerSearch = () => {
                             )}
                         </View>
                     </>
-                )}
-                ListFooterComponent={() => (
-                    <View style={styles.footerContainer}>
-                        <TouchableOpacity
-                            style={styles.paginationButton}
-                            onPress={() => handlePagination('left')}
-                        >
-                            <Image
-                                source={icons.chevronLeft}
-                                style={styles.paginationImage}
-                                resizeMode="contain"
-                            />
-                        </TouchableOpacity>
-                        <View style={styles.paginationTextBox}>
-                            <Text style={styles.paginationText}>{page}</Text>
-                        </View>
-                        <TouchableOpacity
-                            style={styles.paginationButton}
-                            onPress={() => handlePagination('right')}
-                        >
-                            <Image
-                                source={icons.chevronRight}
-                                style={styles.paginationImage}
-                                resizeMode="contain"
-                            />
-                        </TouchableOpacity>
-                    </View>
                 )}
             />
         </SafeAreaView>

@@ -3,6 +3,8 @@ import axios from "axios";
 
 const useFetch = (endpoint, query) => {
   const [data, setData] = useState([]);
+  const [data1, setData1] = useState([]);
+
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -23,6 +25,8 @@ const useFetch = (endpoint, query) => {
       const response = await axios.request(options);
 
       setData(response.data);
+      setData1(response.data);
+
       setIsLoading(false);
     } catch (error) {
       setError(error);
@@ -41,7 +45,7 @@ const useFetch = (endpoint, query) => {
     fetchData();
   };
 
-  return { data, isLoading, error, refetch };
+  return { data, data1, isLoading, error, refetch };
 };
 
 export default useFetch;

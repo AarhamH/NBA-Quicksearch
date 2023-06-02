@@ -23,7 +23,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
             style={styles.searchInput}
             value={searchTerm}
             onChangeText={(text) => setSearchTerm(text)}
-            placeholder="Search Player Through Last Name"
+            placeholder="Search Player By First Or Last Name"
             placeholderTextColor={COLORS.gray2}
             />
         </View>
@@ -43,7 +43,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
             <TouchableOpacity 
               style={styles.tab(activeConference, item)}
               onPress={() => {setActiveConference(item);
-                              router.push(`/team-search/${item}`);}}>
+                              router.push({pathname: `/search/[id]`, params:{id: item, type:'team'}});}}>
                 <Text style={styles.tabText(activeConference, item)}>{ item }</Text>
             </TouchableOpacity>
           )} 
