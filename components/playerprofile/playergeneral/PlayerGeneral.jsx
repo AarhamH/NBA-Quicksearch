@@ -3,9 +3,6 @@ import { View, Text, Image } from 'react-native'
 
 import styles from './playergeneral.style'
 
-import { icons } from '../../../constants'
-
-
 const PlayerGeneral = ({playerHeadShot, playerFirstName, playerLastName, playerPosition, playerJersey}) => {
   return (
     <View style={styles.container}>

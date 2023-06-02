@@ -47,13 +47,14 @@ const PlayerDetails = () => {
     const {data,isLoading,error} = useFetch(`players/${params.id}`,{});
 
     return (
-        <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
-            <Stack.Screen options={{headerStyle: {backgroundColor: COLORS.lightWhite}, headerShadowVisible: false, headerBackVisible: false,
-             headerLeft: () => (
-                <ScreenHeaderBtn iconUrl={icons.left} dimension='60%' handlePress={() => router.back()}/>
-            ),
-            headerTitle: ''
-            }}/>
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+            <Stack.Screen
+                options={{
+                    headerStyle: { backgroundColor: COLORS.primary },
+                    headerShadowVisible: false,
+                    headerTitle: "",
+                }}
+            />
 
             <>
             <ScrollView showsVerticalScrollIndicator={false}
