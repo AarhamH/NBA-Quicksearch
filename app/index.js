@@ -10,7 +10,7 @@ const Home = () => {
     const router = useRouter();
     const [searchTerm,setSearchTerm] = useState("");
     return(
-        <SafeAreaView style={{ flex:5, backgroundColor: COLORS.lightWhite}}>
+        <SafeAreaView style={{ flex:5, backgroundColor: COLORS.secondary}}>
             <Stack.Screen options={{
                 headerStyle: { backgroundColor: COLORS.primary },
                 headerShadowVisible: true,

@@ -7,31 +7,31 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
   },
-  userName: {
-    fontFamily: FONT.regular,
+  greetingMessage: {
+    fontFamily: FONT.bold,
     fontSize: SIZES.large,
-    color: COLORS.secondary,
+    color: COLORS.yellow,
   },
   welcomeMessage: {
     fontFamily: FONT.bold,
     fontSize: SIZES.xLarge,
-    color: COLORS.primary,
+    color: COLORS.lightWhite,
     marginTop: 2,
   },
   searchContainer: {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
-    marginTop: SIZES.large,
-    height: 50,
+    marginTop: SIZES.xLarge,
+    height: 35,
   },
   searchWrapper: {
     flex: 1,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.tertiary,
     marginRight: SIZES.small,
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: SIZES.medium,
+    borderRadius: SIZES.small,
     height: "100%",
   },
   searchInput: {
@@ -51,22 +51,26 @@ const styles = StyleSheet.create({
   searchBtnImage: {
     width: "50%",
     height: "50%",
-    tintColor: COLORS.white,
+    tintColor: COLORS.yellow,
+  },
+  logoImage: {
+    height: 60,
+    width: 60
   },
   tabsContainer: {
     width: "100%",
     marginTop: SIZES.medium,
   },
   tab: (activeJobType, item) => ({
-    paddingVertical: SIZES.small / 2,
-    paddingHorizontal: SIZES.small,
-    borderRadius: SIZES.medium,
-    borderWidth: 1,
-    borderColor: activeJobType === item ? COLORS.secondary : COLORS.gray2,
+    paddingVertical: 5,
+    paddingHorizontal: 5,
+    borderRadius: 200,
+    borderWidth: 2,
+    borderColor: activeJobType === item ? COLORS.yellow : COLORS.secondary,
   }),
   tabText: (activeJobType, item) => ({
     fontFamily: FONT.medium,
-    color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
+    color: activeJobType === item ? COLORS.yellow : COLORS.gray,
   }),
 });
 

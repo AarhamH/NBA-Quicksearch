@@ -13,7 +13,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   return (
     <View>
       <View style={styles.container}>
-        <Text style={styles.userName}>Hello, User</Text>
+        <Text style={styles.greetingMessage}>Hello, User</Text>
         <Text style={styles.welcomeMessage}>Begin exploring NBA Stats!</Text>
       </View>
 
@@ -24,7 +24,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
             value={searchTerm}
             onChangeText={(text) => setSearchTerm(text)}
             placeholder="Search Player By First Or Last Name"
-            placeholderTextColor={COLORS.gray2}
+            placeholderTextColor={COLORS.gray}
             />
         </View>
         <TouchableOpacity style={styles.searchBtn} onPress={handleClick}>
@@ -44,7 +44,11 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
               style={styles.tab(activeConference, item)}
               onPress={() => {setActiveConference(item);
                               router.push({pathname: `/search/[id]`, params:{id: item, type:'team'}});}}>
-                <Text style={styles.tabText(activeConference, item)}>{ item }</Text>
+                <Image 
+                  source={{uri:"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/atl.png&h=200&w=200"}}
+                  resizeMode='contain'
+                  style={styles.logoImage}
+                />
             </TouchableOpacity>
           )} 
           keyExtractor={ item => item}  
