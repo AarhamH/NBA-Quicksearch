@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
     tintColor: COLORS.yellow,
   },
   logoImage: {
-    height: 60,
-    width: 60
+    height: 50,
+    width: 50
   },
   tabsContainer: {
     width: "100%",

@@ -4,53 +4,46 @@ import { COLORS, FONT, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: SIZES.medium,
     justifyContent: "center",
     alignItems: "center",
   },
-  logoBox: {
-    width: 80,
-    height: 80,
+  headShotBox: {
+    width: 250,
+    height: 200,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#FFF",
-    borderRadius: SIZES.large,
+    backgroundColor: COLORS.secondary,
   },
-  logoImage: {
+  headShotImg: {
     width: "80%",
     height: "80%",
   },
-  jobTitleBox: {
-    marginTop: SIZES.small,
+  playerNameBox: {
+    marginTop: 0,
   },
-  jobTitle: {
+  playerName: {
     fontSize: SIZES.large,
-    color: COLORS.primary,
+    color: COLORS.lightWhite,
     fontFamily: FONT.bold,
     textAlign: "center",
   },
-  companyInfoBox: {
+  positionNameBox: {
     marginTop: SIZES.small / 2,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },
-  companyName: {
+  positionName: {
     fontSize: SIZES.medium - 2,
-    color: COLORS.primary,
+    color: COLORS.gray,
     fontFamily: FONT.medium,
   },
-  locationBox: {
+  jerseyBox: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },
-  locationImage: {
-    width: 14,
-    height: 14,
-    tintColor: COLORS.gray,
-  },
-  locationName: {
+  jerseyNum: {
     fontSize: SIZES.medium - 2,
     color: COLORS.gray,
     fontFamily: FONT.regular,

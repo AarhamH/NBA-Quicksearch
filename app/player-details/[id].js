@@ -47,7 +47,7 @@ const PlayerDetails = () => {
     const {data,isLoading,error} = useFetch(`players/${params.id}`,{});
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.secondary }}>
             <Stack.Screen
                 options={{
                     headerStyle: { backgroundColor: COLORS.primary },
@@ -84,7 +84,11 @@ const PlayerDetails = () => {
             </ScrollView>
 
             <Footer
-                dateLastUpdated={data.dateLastUpdated}/>
+                dateLastUpdated={data.dateLastUpdated}
+                playerFirstName={data.firstName}
+                playerLastName={data.lastName}/>
+
+
             </>
         </SafeAreaView>
     )
