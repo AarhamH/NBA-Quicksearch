@@ -10,11 +10,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: SIZES.medium,
     borderRadius: SIZES.small,
-    backgroundColor: "#FFF",
+    backgroundColor: COLORS.tertiary,
     ...SHADOWS.medium,
-    shadowColor: COLORS.white,
+    shadowColor: COLORS.tertiary,
   },
-  logoContainer: {
+  summaryContainer: {
     width: 50,
     height: 50,
     borderRadius:5,
@@ -22,7 +22,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  logImage: {
+  logoImg: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    opacity: 0.4,
+  },
+  headShot: {
+    position: "relative",
     marginTop: 5,
     width: "110%",
     height: "100%",
@@ -31,15 +38,15 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: SIZES.medium,
   },
-  jobName: {
+  playerName: {
     fontSize: SIZES.medium,
     fontFamily: "DMBold",
-    color: COLORS.primary,
+    color: COLORS.lightWhite,
   },
   summaryStats: {
     fontSize: SIZES.small,
     fontFamily: "DMRegular",
-    color: COLORS.gray,
+    color: COLORS.yellow,
     marginTop: 3,
   },
 });

@@ -8,20 +8,20 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
-    marginTop: SIZES.small,
   },
   headerTitle: {
     fontSize: SIZES.large,
     fontFamily: FONT.medium,
-    color: COLORS.primary,
+    color: COLORS.white,
   },
-  headerBtn: {
-    fontSize: SIZES.medium,
+
+  headerTitleTeam: {
+    fontSize: SIZES.large,
     fontFamily: FONT.medium,
-    color: COLORS.gray,
+    color: COLORS.yellow,
   },
+
   cardsContainer: {
     marginTop: SIZES.medium,
     gap: SIZES.small,

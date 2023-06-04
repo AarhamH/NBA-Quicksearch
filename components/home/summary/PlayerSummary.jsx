@@ -9,21 +9,32 @@ import {
 import styles from "./playersummary.style";
 import { COLORS } from "../../../constants";
 import PlayerSummaryCard from "../../common/cards/summarycard/PlayerSummaryCard";
-import { teams } from '../../../teams/teams'
+import { createTeamHash } from '../../../teams/teams'
 import useFetch from "../../../hook/useFetch";
+import { useState } from "react";
 
 
 const PlayerSummary = () => {
-  var randomnumber = Math.floor(Math.random() * (teams.length));  
   const router = useRouter();
-  console.log(randomnumber);
-  const {data,isLoading,error} = useFetch('players/team',{name: teams[randomnumber]});
+  const teams = new Map();
+  createTeamHash(teams);
+  const yass = []
+  
+  
+  for(let i=0; i<teams.size; i++)
+  {
+    yass.push(Array.from(teams)[i][0])
+  }
 
+  var randomnumber = Math.floor(Math.random() * (yass.length));  
+
+  const {data,isLoading,error} = useFetch('players/team',{name: yass[randomnumber]});
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Random Players</Text>
+        <Text style={styles.headerTitle}>Some Players from </Text>
+        <Text style={styles.headerTitleTeam}>{isLoading?"---":data[0]?.team} </Text>
       </View>
 
       <View style={styles.cardsContainer}>

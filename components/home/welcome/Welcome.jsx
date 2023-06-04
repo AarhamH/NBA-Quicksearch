@@ -4,11 +4,19 @@ import { useRouter } from 'expo-router'
 
 import styles from './welcome.style'
 import { COLORS, icons, SIZES } from '../../../constants'
-import { teams } from '../../../teams/teams'
+import { createTeamHash } from '../../../teams/teams'
 
 const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   const router = useRouter();
-  const [activeConference, setActiveConference] = useState("Atlantic")
+  const [activeConference, setActiveConference] = useState("Atlanta Hawks")
+  const teams = new Map();
+  const yass = []
+  createTeamHash(teams);
+
+  for(let i=0; i<teams.size; i++)
+  {
+    yass.push(Array.from(teams)[i][0])
+  }
 
   return (
     <View>
@@ -38,14 +46,14 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
 
       <View style={styles.tabsContainer}>
         <FlatList
-          data={teams}
+          data={yass}
           renderItem={({ item }) => (
             <TouchableOpacity 
               style={styles.tab(activeConference, item)}
               onPress={() => {setActiveConference(item);
                               router.push({pathname: `/search/[id]`, params:{id: item, type:'team'}});}}>
                 <Image 
-                  source={{uri:"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/atl.png&h=200&w=200"}}
+                  source={{uri:`https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/${teams.get(item)}.png&h=200&w=200`}}
                   resizeMode='contain'
                   style={styles.logoImage}
                 />
