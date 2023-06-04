@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
     marginTop: SIZES.xLarge,
   },
   header: {
-    flexDirection: "row",
-    alignItems: "center",
+
+    alignItems: "left  ",
   },
   headerTitle: {
     fontSize: SIZES.large,

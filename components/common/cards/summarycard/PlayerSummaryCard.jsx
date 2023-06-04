@@ -10,12 +10,18 @@ const PlayerSummaryCard = ({ item, handleNavigate }) => {
   setPosition(positions);
   createTeamHash(teams);
 
+
   return (
     <TouchableOpacity style={styles.container} onPress={handleNavigate}>
 
       <TouchableOpacity style={styles.summaryContainer}>
-        <Image source={{uri:`https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/${teams.get(item.team)}.png&h=200&w=200`}} resizeMode='contain' style={styles.logoImg}/>
-        <Image source={{uri:item.headShotUrl}} resizeMode='contain' style={styles.headShot}/>
+        <Image source={{uri: item.team !== null?`https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/${teams.get(item.team)}.png&h=200&w=200`:
+                                                'https://a.espncdn.com/combiner/i?img=/redesign/assets/img/icons/ESPN-icon-basketball.png&h=200&w=200&scale=crop&cquality=40'}} 
+                                                 resizeMode='contain' style={styles.logoImg}/>
+
+        <Image source={{uri:item.headShotUrl!== null? item.headShotUrl:
+                                                      'https://a1.espncdn.com/combiner/i?img=/i/headshots/nophoto.png&w=60&h=60&scale=crop&cquality=40'}} 
+                                                       resizeMode='contain' style={styles.headShot}/>
       </TouchableOpacity>
       
 

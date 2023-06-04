@@ -29,6 +29,8 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
         <View style={styles.searchWrapper}>
           <TextInput
             style={styles.searchInput}
+            returnKeyType='go'
+            onSubmitEditing={handleClick}
             value={searchTerm}
             onChangeText={(text) => setSearchTerm(text)}
             placeholder="Search Player By First Or Last Name"

@@ -30,10 +30,13 @@ const PlayerSummary = () => {
 
   const {data,isLoading,error} = useFetch('players/team',{name: yass[randomnumber]});
 
+  data.splice(1,4);
+
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Some Players from </Text>
+        <Text style={styles.headerTitle}>Here are some players from </Text>
         <Text style={styles.headerTitleTeam}>{isLoading?"---":data[0]?.team} </Text>
       </View>
 
