@@ -2,7 +2,7 @@ import { Text, View, SafeAreaView, ScrollView, ActivityIndicator, RefreshControl
 import { Stack, useRouter, useSearchParams } from 'expo-router'
 import { useCallback, useState } from 'react'
 
-import { PlayerGeneral, About, Footer, Specifics, Tabs, ScreenHeaderBtn } from '../../components'
+import { PlayerGeneral, About, Footer, Stats, Tabs, ScreenHeaderBtn } from '../../components'
 import {COLORS, icons, SIZES} from '../../constants'
 import useFetch from '../../hook/useFetch'
 
@@ -28,7 +28,7 @@ const PlayerDetails = () => {
                          playerWeight = {data.weight}
                          playerTeam = {data.team}/>);
             case "Career Statistics":
-                return (<Specifics 
+                return (<Stats 
                 title=' Career Statistics: ' 
                 playerPPG = {data.careerPoints}
                 playerREB = {data.careerRebounds}

@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     searchTitle: {
         fontFamily: FONT.bold,
         fontSize: SIZES.xLarge,
-        color: COLORS.primary,
+        color: COLORS.lightWhite,
     },
     noOfSearchedJobs: {
         marginTop: 2,

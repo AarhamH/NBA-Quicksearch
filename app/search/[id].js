@@ -25,7 +25,7 @@ const PlayerSearch = () => {
     const {data1} = useFetch('players/lastname',{lastname: params.id});
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.secondary }}>
             <Stack.Screen
                 options={{
                     headerStyle: { backgroundColor: COLORS.primary },
@@ -48,7 +48,7 @@ const PlayerSearch = () => {
                     <>
                         <View style={styles.container}>
                             <Text style={styles.searchTitle}>Showing Results For "{params.id}"</Text>
-                            <Text style={styles.noOfSearchedJobs}>Individual Players</Text>
+                            <Text style={styles.noOfSearchedJobs}>{data.size}</Text>
                         </View>
                         <View style={styles.loaderContainer}>
                             {searchLoader ? (

@@ -27,17 +27,16 @@ const PlayerSummary = () => {
   }
 
   var randomnumber = Math.floor(Math.random() * (yass.length));  
+  var randomnumber2 = Math.floor(Math.random() * (yass.length));  
+
 
   const {data,isLoading,error} = useFetch('players/team',{name: yass[randomnumber]});
-
-  data.splice(1,4);
-
-
+  var array = data.slice(4,9);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Here are some players from </Text>
-        <Text style={styles.headerTitleTeam}>{isLoading?"---":data[0]?.team} </Text>
+        <Text style={styles.headerTitleTeam}>{isLoading?"---":array[0]?.team} </Text>
       </View>
 
       <View style={styles.cardsContainer}>
@@ -46,7 +45,7 @@ const PlayerSummary = () => {
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
-          data?.map((item) => (<PlayerSummaryCard item = {item} key={`nearby-job-${item?.id}`} handleNavigate={() => router.push(`/player-details/${item.id}`)}/>))
+          array?.map((item) => (<PlayerSummaryCard item = {item} key={`nearby-job-${item?.id}`} handleNavigate={() => router.push(`/player-details/${item.id}`)}/>))
         )}
       </View>
     </View>

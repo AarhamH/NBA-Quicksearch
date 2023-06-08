@@ -1,20 +1,24 @@
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image,Linking } from 'react-native'
 import { parseName } from '../../../utils'
 import { setPosition } from '../../../app/positions/positions'
 
 import styles from './playergeneral.style'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const PlayerGeneral = ({playerHeadShot, playerFirstName, playerLastName, playerPosition, playerJersey}) => {
   var positions = new Map();
-  setPosition(positions)
+  setPosition(positions);
+
+  var name = playerFirstName + " "+ playerLastName;
+  var parsedName = parseName(name);
   return (
     <View style={styles.container}>
-      <View style={styles.headShotBox}>
+      <TouchableOpacity style={styles.headShotBox} onPress={()=>{Linking.openURL(`https://ca.global.nba.com/players/${parsedName}/`)}}>
         <Image
           source={{ uri: playerHeadShot }} style={styles.headShotImg}
         />
-      </View>
+      </TouchableOpacity>
       <View style={styles.playerNameBox}>
         <Text style={styles.playerName}>{playerFirstName} {playerLastName}</Text>
       </View>

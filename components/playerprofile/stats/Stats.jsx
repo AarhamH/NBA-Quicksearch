@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import styles from './specifics.style'
+import styles from './stats.style'
 
-const Specifics = ({title,playerPPG,playerREB,playerAST,playerBLK,playerTOV,player3PT,playerFT,playerFG}) => {
+const Stats = ({title,playerPPG,playerREB,playerAST,playerBLK,playerTOV,player3PT,playerFT,playerFG}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -61,4 +61,4 @@ const Specifics = ({title,playerPPG,playerREB,playerAST,playerBLK,playerTOV,play
   )
 }
 
-export default Specifics
+export default Stats

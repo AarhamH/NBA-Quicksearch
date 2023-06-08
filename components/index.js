@@ -9,7 +9,7 @@ import PlayerGeneral from "./playerprofile/playergeneral/PlayerGeneral";
 import { default as Tabs } from "./playerprofile/tabs/Tabs";
 import { default as About } from "./playerprofile/about/About";
 import { default as Footer } from "./playerprofile/footer/Footer";
-import Specifics from "./playerprofile/specifics/Specifics";
+import Stats from "./playerprofile/stats/Stats";
 
 // common
 import PlayerSummaryCard from "./common/cards/summarycard/PlayerSummaryCard";
@@ -22,6 +22,6 @@ export {
   Tabs,
   About,
   Footer,
-  Specifics,
+  Stats,
   PlayerSummaryCard
 };
