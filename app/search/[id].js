@@ -21,8 +21,9 @@ const PlayerSearch = () => {
     const [searchError, setSearchError] = useState(null);
     const [page, setPage] = useState(1);
 
-    const {data} = useFetch(`players/${params.type}`,{firstname: params.id, name: params.id});
-    const {data1} = useFetch('players/lastname',{lastname: params.id});
+    var {data} = useFetch(`players/${params.type}`,{firstname: params.id, name: params.id});
+    var {data1} = useFetch('players/lastname',{lastname: params.id});
+    data = data.concat(data1);
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.secondary }}>
@@ -35,7 +36,7 @@ const PlayerSearch = () => {
             />
 
             <FlatList
-                data={(data[0] === undefined) ? data1: data}
+                data={data}
                 renderItem={({ item }) => (
                     <PlayerSummaryCard
                         item={item}
