@@ -13,26 +13,29 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.tertiary,
     ...SHADOWS.medium,
     shadowColor: COLORS.tertiary,
+    marginLeft:-10,
+    marginRight:-10
   },
   summaryContainer: {
     width: 50,
     height: 50,
-    borderRadius:5,
-    backgroundColor: COLORS.white,
+    borderRadius:50,
+    backgroundColor: COLORS.primary,
     justifyContent: "center",
     alignItems: "center",
+    position:"relative",
+    overflow:"hidden"
   },
   logoImg: {
     position: "absolute",
-    width: "100%",
-    height: "100%",
-    opacity: 0.4,
+    width: "80%",
+    height: "80%",
+    opacity: 0.5,
   },
   headShot: {
-    position: "relative",
-    marginTop: 5,
-    width: "110%",
-    height: "100%",
+    marginTop:5,
+    width: "300%",
+    height: "90%",
   },
   textContainer: {
     flex: 1,
