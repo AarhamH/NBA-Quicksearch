@@ -4,15 +4,19 @@ import { COLORS, FONT, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SIZES.large,
-    backgroundColor: "#FFF",
-    borderRadius: SIZES.medium,
-    padding: SIZES.medium,
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    borderRadius: 10,
+    marginLeft:-10,
+    marginRight:-10
   },
+
   title: {
     fontSize: SIZES.large,
     color: COLORS.primary,
     fontFamily: FONT.bold,
+    marginBottom: 10,
   },
   pointsContainer: {
     marginVertical: SIZES.small,
@@ -35,6 +39,27 @@ const styles = StyleSheet.create({
     color: COLORS.gray,
     fontFamily: FONT.regular,
     marginLeft: SIZES.small,
+  },
+
+  label: {
+    marginTop: 6,
+    fontSize: 16,
+    fontWeight: '100',
+  },
+
+  input: {
+    borderBottomWidth: 1,
+    paddingVertical: 3,
+    width: 50,
+    textAlign: 'center',
+  },
+
+  row: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    marginBottom: 10,
   },
 });
 

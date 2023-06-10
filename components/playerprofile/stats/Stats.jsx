@@ -1,63 +1,33 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import {useState} from 'react'
+import { View, Text, SafeAreaView, FlatList, Image } from 'react-native'
 
 import styles from './stats.style'
 
+function parseStat(variable){
+  var parseVar = Object.keys(variable)[0];
+  parseVar = parseVar.slice(6);
+
+  return parseVar;
+}
 const Stats = ({title,playerPPG,playerREB,playerAST,playerBLK,playerTOV,player3PT,playerFT,playerFG}) => {
+  const array = [playerPPG,playerREB,playerAST,playerBLK,playerTOV,player3PT,playerFT,playerFG]  
+  var mmm = "playerFG"
+  console.log(mmm.slice(6))
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-
-      <View style={styles.pointsContainer}>
-        {/* THIS IS A POINT COMPONENT*/}
-        <View style={styles.pointWrapper}>
-          <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>PPG: {playerPPG}</Text>
-        </View>
-
-        {/* THIS IS A POINT COMPONENT*/}
-        <View style={styles.pointWrapper}>
-          <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>REB: {playerREB}</Text>
-        </View>
-
-        {/* THIS IS A POINT COMPONENT*/}
-        <View style={styles.pointWrapper}>
-          <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>AST: {playerAST}</Text>
-        </View>
-
-        {/* THIS IS A POINT COMPONENT*/}
-        <View style={styles.pointWrapper}>
-          <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>BLK: {playerBLK}</Text>
-        </View>
-
-        {/* THIS IS A POINT COMPONENT*/}
-        <View style={styles.pointWrapper}>
-          <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>TOV: {playerTOV}</Text>
-        </View>
-
-        {/* THIS IS A POINT COMPONENT*/}
-        <View style={styles.pointWrapper}>
-          <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>3PT%: {player3PT}</Text>
-        </View>
-
-        {/* THIS IS A POINT COMPONENT*/}
-        <View style={styles.pointWrapper}>
-          <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>FT%: {playerFT}</Text>
-        </View>
-
-        {/* THIS IS A POINT COMPONENT*/}
-        <View style={styles.pointWrapper}>
-          <View style={styles.pointDot}/>
-          <Text style={styles.pointText}>FG%: {playerFG}</Text>
-        </View>
-      </View>
-    </View>
+      <FlatList
+        data={array}
+        renderItem={({ item }) => (
+          <View style={{ flex: 1, flexDirection: 'column', margin: 3 }}>
+            <Text>PPG:{item}</Text>
+          </View>
+        )}
+        //Setting the number of column
+        numColumns={4}
+      />
+    </SafeAreaView>
   )
 }
 
