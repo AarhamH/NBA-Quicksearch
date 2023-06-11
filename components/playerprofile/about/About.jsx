@@ -17,8 +17,9 @@ const About = ({title,playerBirthday,playerAge,playerHeight,playerWeight,playerT
         <Text style={styles.contextText}>Height: {playerHeight}</Text>
         <Text style={styles.contextText}>Weight: {playerWeight}</Text>
         <Text style={styles.contextText}>Team: {playerTeam}</Text>
-        <Image source={{uri:`https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/${teams.get(playerTeam)}.png&h=200&w=200`}} 
-                       style={styles.logoImg}/>
+        <Image source={{uri:playerTeam !== null?`https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/${teams.get(playerTeam)}.png&h=200&w=200`:
+                                                'https://a.espncdn.com/combiner/i?img=/redesign/assets/img/icons/ESPN-icon-basketball.png&h=200&w=200&scale=crop&cquality=40'}} 
+                                                 style={styles.logoImg}/>
       </View>
     </View>
   )

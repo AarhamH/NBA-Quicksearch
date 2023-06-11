@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     borderRadius: SIZES.small,
     backgroundColor: COLORS.tertiary,
     ...SHADOWS.medium,
-    shadowColor: COLORS.tertiary,
+    shadowColor: "black",
     marginLeft:-10,
     marginRight:-10
   },
