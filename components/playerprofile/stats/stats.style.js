@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
   pointsContainer: {
     marginVertical: SIZES.small,
     margin:40,
-    marginBottom:200
   },
   typeText: {
     fontSize: SIZES.medium-1,
