@@ -27,9 +27,6 @@ This is a simple mobile application developed using React Native and built throu
 - Beautiful and user-friendly UI
 
 ## Installation and Loading Dev Server
-
-Provide step-by-step instructions on how to install and set up the project. Include any dependencies or prerequisites needed.
-
 1. Install Expo, React Native, and Axios
 ```bash
 $ npm install expo-cli
@@ -45,5 +42,4 @@ $ expo-cli start --tunnel
 ```
 
 ## Demo
-
 Live demo not available yet
