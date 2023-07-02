@@ -6,16 +6,19 @@ Browse season stats for your favorite players, in a flash!
 
 - [Project Description](#project-description)
 - [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Installation and Loading Dev Server](#installation-and-loading-dev-server)
+- [Demo](#demo)
 
 ## Project Description
 
 This is a simple mobile application developed using React Native and built through [Expo](https://expo.dev/).
 
-![s1](https://ibb.co/d0kmCKT)
+<img src="https://github.com/AarhamH/react_native_NBA/assets/105332385/a9b2ced0-7774-44c7-ab1c-2604ab9040c5" width="200" height="400" /> 
+<img src="https://github.com/AarhamH/react_native_NBA/assets/105332385/b6ea4fc5-5a5a-4583-8fb0-30db49ddbc5d" width="200" height="400" /> 
+<img src="https://github.com/AarhamH/react_native_NBA/assets/105332385/c5aeae53-cdac-479e-9faa-891feb213f13" width="200" height="400" /> 
+<img src="https://github.com/AarhamH/react_native_NBA/assets/105332385/4f1ada4c-c5ec-4b70-8025-8221abca43fd" width="200" height="400" /> 
+
+
 ## Features
 - Easy player search through name and team
 - Regularly updated data
@@ -34,13 +37,13 @@ $ npm install axios
 ```
 2. Start Expo Development Server
 ```bash
-$ npm install expo-cli
-$ npm install axios
+$ npx expo start
+```
+or
+```bash
+$ expo-cli start --tunnel
 ```
 
-## Usage
+## Demo
 
-Demonstrate how to use the project. Provide code examples or screenshots if applicable. Include any relevant command line instructions.
-
-```bash
-$ command-line-example
+Live demo not available yet
