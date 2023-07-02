@@ -5,6 +5,11 @@
       "bundler": "metro"
     },
     "name": "react_native_NBA",
-    "slug": "react_native_NBA"
+    "slug": "react_native_NBA",
+    "extra": {
+      "eas": {
+        "projectId": "9bd3074a-ab7a-4c11-9bb5-d1aa8f240cf5"
+      }
+    }
   }
 }
