@@ -7,11 +7,12 @@ Browse season stats for your favorite players, in a flash!
 - [Project Description](#project-description)
 - [Features](#features)
 - [Installation and Loading Dev Server](#installation-and-loading-dev-server)
-- [Demo](#demo)
 
 ## Project Description
 
 This is a simple mobile application developed using React Native and built through [Expo](https://expo.dev/). NBA stats are fetched from an [Individual Stats API](https://rapidapi.com/kaylanhusband/api/nba-player-individual-stats/pricing).
+
+[Check out the app in action!](https://youtu.be/3PuuFa0J7g8)
 
 <img src="https://github.com/AarhamH/react_native_NBA/assets/105332385/a9b2ced0-7774-44c7-ab1c-2604ab9040c5" width="200" height="400" /> 
 <img src="https://github.com/AarhamH/react_native_NBA/assets/105332385/b6ea4fc5-5a5a-4583-8fb0-30db49ddbc5d" width="200" height="400" /> 
@@ -40,6 +41,3 @@ or
 ```bash
 $ expo-cli start --tunnel
 ```
-
-## Demo
-Live demo not available yet
