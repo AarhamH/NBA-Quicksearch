@@ -33,6 +33,18 @@ This is a simple mobile application developed using React Native and built throu
 $ npm install expo-cli
 $ npm install axios
 ```
+2. Subscribe to [NBA Player Individual Stats API](https://rapidapi.com/kaylanhusband/api/nba-player-individual-stats/pricing) and put in your own key in /hook/useFetch.js
+```js
+  const options = {
+    method: 'GET',
+    url: `https://nba-player-individual-stats.p.rapidapi.com/${endpoint}`,
+    params: {...query},
+    headers: {
+      'X-RapidAPI-Key': 'YOUR API KEY HERE', // replace 'YOUR API KEY HERE' string with key
+      'X-RapidAPI-Host': 'nba-player-individual-stats.p.rapidapi.com'
+    }
+  };
+```
 2. Start Expo Development Server
 ```bash
 $ npx expo start
