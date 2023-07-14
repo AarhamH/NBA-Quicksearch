@@ -13,7 +13,7 @@ const useFetch = (endpoint, query) => {
     url: `https://nba-player-individual-stats.p.rapidapi.com/${endpoint}`,
     params: {...query},
     headers: {
-      'X-RapidAPI-Key': 'c88ea079e8mshb2b985d98730896p1c722bjsn4505e7f9c114',
+      'X-RapidAPI-Key': 'YOUR API KEY HERE',
       'X-RapidAPI-Host': 'nba-player-individual-stats.p.rapidapi.com'
     }
   };
